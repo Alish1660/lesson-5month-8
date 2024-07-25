@@ -8,6 +8,7 @@ import Products from "@/components/product";
 import Sales from "@/components/sales";
 import Useful from "@/components/usefil";
 import Footer from "@/components/footer";
+import Carousel from "@/components/carousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Header />
+        <Carousel />
         {children}
         <Auction />
         <News />
