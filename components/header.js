@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/images/Logo.png";
@@ -15,43 +16,55 @@ const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-custom-black h-20 font-Fira-sans  mb-[140px] sticky top-0 z-20">
+    <header className="bg-custom-black h-20 font-Fira-sans  mb-[90px] sticky top-0 z-20  ">
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center space-x-4 lg:space-x-6">
-          <Image src={Logo} alt="Logo" className="w-10 h-10 lg:w-12 lg:h-12" />
-          <h1 className="text-lg text-white lg:text-xl">Sport Market</h1>
+          <Link href="/" className="flex items-center">
+            <Image
+              src={Logo}
+              alt="Logo"
+              className="w-10 h-10 lg:w-12 lg:h-12"
+            />
+            <h1 className="text-lg text-white lg:text-xl">Sport Market</h1>
+          </Link>
 
           <nav className="hidden lg:flex lg:items-center lg:space-x-6">
-            <a
-              href="#"
+            <Link
+              href="/products"
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
               Продукты
-            </a>
+            </Link>
             <a
               href="#"
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
               Контакты
             </a>
-            <a
-              href="#"
+            <Link
+              href="/delivery"
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
               Оплата и Доставка
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/news"
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
               Новости
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/about"
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
               О нас
-            </a>
+            </Link>
+            {/* <Link
+              href="/home"
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Главная
+            </Link> */}
           </nav>
         </div>
 
@@ -76,7 +89,7 @@ const Index = () => {
           </button>
         </div>
       </div>
-      <div className="bg-white h-[100px]">
+      <div className="bg-white h-[90px]">
         <div className="container ">
           <div className="flex justify-center gap-3 sm:flex sm:flex-row sm:justify-between lg:flex lg:flex-row lg:justify-between items-center ">
             <div className="font-Fira-sans pt-[15px] flex items-center gap-[20px] lg:gap-[10px]">
