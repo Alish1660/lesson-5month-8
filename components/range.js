@@ -10,20 +10,20 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 
 const YellowSlider = styled(Slider)({
-  color: "#FFD700", // Yellow color for the active part of the slider
+  color: "#FFD700",
   "& .MuiSlider-thumb": {
-    borderRadius: "50%", // Make thumb round
-    backgroundColor: "#FBD029", // Fill color for the thumb
-    border: "5px solid #1F1D14", // Stroke color and width
+    borderRadius: "50%",
+    backgroundColor: "#FBD029",
+    border: "5px solid #1F1D14",
   },
   "& .MuiSlider-track": {
-    backgroundColor: "#FFD700", // Yellow color for the track
+    backgroundColor: "#FFD700",
   },
   "& .MuiSlider-rail": {
-    backgroundColor: "#BDBDBD", // Optional: color for the rail (unselected portion)
+    backgroundColor: "#BDBDBD",
   },
   "& .MuiSlider-thumb::before": {
-    display: "none", // Remove the default box-shadow
+    display: "none",
   },
 });
 

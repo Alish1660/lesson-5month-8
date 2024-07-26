@@ -129,36 +129,36 @@ const Index = () => {
         } absolute top-20 left-0 w-full bg-custom-black text-center z-10`}
       >
         <nav className="flex flex-col items-center py-4 space-y-4">
-          <a
-            href="#"
+          <Link
+            href="/products"
             className="text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
           >
             Продукты
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             className="text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
           >
             Контакты
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/delivery"
             className="text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
           >
             Оплата и Доставка
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/news"
             className="text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
           >
             Новости
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/about"
             className="text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium"
           >
             О нас
-          </a>
+          </Link>
 
           <div className="flex flex-col items-center mt-4 space-y-2">
             <div className="flex items-center space-x-2">
