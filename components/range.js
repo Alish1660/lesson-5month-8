@@ -6,7 +6,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 
 const YellowSlider = styled(Slider)({
@@ -119,9 +118,11 @@ const Filter = () => {
         </FormControl>
       </div>
 
-      <Button variant="contained" color="primary" fullWidth>
-        Показать результат
-      </Button>
+      <div className="flex justify-center text-yellow-500 ">
+        <button className="border-2 border-yellow-400  py-[10px] px-[10px]  rounded-md hover:bg-yellow-500 hover:text-white transform transition-transform hover:scale-95">
+          Показать результат
+        </button>
+      </div>
     </div>
   );
 };
