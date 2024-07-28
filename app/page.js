@@ -6,10 +6,12 @@ import Products from "@/components/product";
 import Sales from "@/components/sales";
 import Useful from "@/components/usefil";
 import Carousel from "@/components/carousel";
+import Categories from "@/components/categories";
 const Index = () => {
   return (
     <div>
       <Carousel />
+      <Categories />
       <Auction />
       <News />
       <Products />

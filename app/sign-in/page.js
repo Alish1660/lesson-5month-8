@@ -10,6 +10,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import CloseIcon from "@mui/icons-material/Close";
 
 const KeepMountedModal = ({ open, handleClose }) => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -30,12 +31,17 @@ const KeepMountedModal = ({ open, handleClose }) => {
   return (
     <Modal
       open={open}
-      onClose={handleClose}
       keepMounted
       aria-labelledby="keep-mounted-modal-title"
       aria-describedby="keep-mounted-modal-description"
     >
       <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[378px] h-[371px] p-6 bg-white rounded shadow-lg">
+        <IconButton
+          className="absolute top-0 left-[310px]"
+          onClick={handleClose}
+        >
+          <CloseIcon />
+        </IconButton>
         <Typography
           id="keep-mounted-modal-title"
           variant="h6"
@@ -54,8 +60,9 @@ const KeepMountedModal = ({ open, handleClose }) => {
           className="flex flex-col gap-4"
         >
           <TextField
-            id="login"
-            placeholder="Login"
+            id="email"
+            placeholder="Email"
+            type="email"
             variant="outlined"
             fullWidth
             required
@@ -95,9 +102,7 @@ const KeepMountedModal = ({ open, handleClose }) => {
               ),
             }}
           />
-          <Typography className="text-blue-500 cursor-pointer">
-            Забыли пароль?
-          </Typography>
+
           <button
             type="submit"
             variant="contained"

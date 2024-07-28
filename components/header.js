@@ -121,13 +121,19 @@ const Index = () => {
                 >
                   <Image src={User} alt="User" />
                 </button>
-                <button className="bg-custom-gray  py-3 px-3 rounded-[3px]">
+                <Link
+                  href="/wishlist"
+                  className="bg-custom-gray  py-3 px-3 rounded-[3px]"
+                >
                   <Image src={Sign} alt="heart sign" />
-                </button>
-                <button className=" flex items-center  gap-[10px] py-3 px-7 lg:text-[20px] sm:text-[14px] sm:py-3 sm:px-7 lg:py-4 lg:px-10 bg-custom-gray rounded-md">
+                </Link>
+                <Link
+                  href="/basket"
+                  className=" flex items-center  gap-[10px] py-3 px-7 lg:text-[20px] sm:text-[14px] sm:py-3 sm:px-7 lg:py-4 lg:px-10 bg-custom-gray rounded-md"
+                >
                   <Image src={Cart} alt="Cart" />
                   <span className="hidden sm:hidden lg:block">Корзина</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
