@@ -34,14 +34,14 @@ const productData = [
 ];
 
 const ProductCard = () => {
-  const [products, setProducts] = useState(productData);
+  const [products, setProducts] = useState(
+    productData.map((product) => ({ ...product, count: 0 }))
+  );
 
   const incrementCount = (id) => {
     setProducts(
       products.map((product) =>
-        product.id === id
-          ? { ...product, count: (product.count || 0) + 1 }
-          : product
+        product.id === id ? { ...product, count: product.count + 1 } : product
       )
     );
   };
@@ -60,6 +60,15 @@ const ProductCard = () => {
     setProducts(products.filter((product) => product.id !== id));
   };
 
+  const totalQuantity = products.reduce(
+    (total, product) => total + product.count,
+    0
+  );
+  const totalPrice = products.reduce(
+    (total, product) => total + product.count * product.pricePerUnit,
+    0
+  );
+
   return (
     <div className="bg-custom-gray p-[50px]">
       <div className="container mx-auto">
@@ -75,7 +84,7 @@ const ProductCard = () => {
               {products.map((product) => (
                 <div
                   key={product.id}
-                  className="font-Fira-sans max-w-[655px] h[140px] flex border rounded-lg overflow-hidden p-4 bg-custom-gray relative mb-4"
+                  className="font-Fira-sans max-w-[655px] h-[140px] flex border rounded-lg overflow-hidden p-4 bg-custom-gray relative mb-4"
                 >
                   <button
                     onClick={() => deleteCard(product.id)}
@@ -105,7 +114,7 @@ const ProductCard = () => {
                         >
                           -
                         </button>
-                        <span>{product.count || 0}</span>
+                        <span>{product.count}</span>
                         <button
                           onClick={() => incrementCount(product.id)}
                           className="flex justify-center bg-white items-center border w-[32px] h-[32px] font-bold rounded-[50%]"
@@ -114,7 +123,7 @@ const ProductCard = () => {
                         </button>
                         <span className="pl-[20px] text-[22px] font-bold">
                           {(
-                            (product.count || 0) * product.pricePerUnit
+                            product.count * product.pricePerUnit
                           ).toLocaleString()}{" "}
                           uzs
                         </span>
@@ -126,19 +135,22 @@ const ProductCard = () => {
             </div>
             <h3 className="pt-[15px] pb-[15px]">Все информация о доставке</h3>
             <p className="max-w-[384px]">
-              Если у вас имеется вопросы позаоните по номеру:+998 (99) 995 55 65{" "}
+              Если у вас имеется вопросы позвоните по номеру: +998 (99) 995 55
+              65{" "}
             </p>
           </div>
-          <div className=" w-full max-w-[504px] h-[800px] mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="w-full max-w-[504px] h-[800px] mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="p-6">
               <div className="text-lg font-semibold mb-2">Итого</div>
               <div className="flex justify-between mb-4">
                 <span>Кол-во товаров:</span>
-                <span>4</span>
+                <span>{totalQuantity}</span>
               </div>
               <div className="flex justify-between mb-6">
                 <span>Сумма:</span>
-                <span className="font-semibold">250 000 UZS</span>
+                <span className="font-semibold">
+                  {totalPrice.toLocaleString()} UZS
+                </span>
               </div>
               <div className="text-lg font-semibold mb-2">Ваши данные</div>
               <form>
@@ -215,7 +227,7 @@ const ProductCard = () => {
                   </button>
                   <button
                     type="button"
-                    className=" flex justify-center items-center px-[25px] py-[17px] text-sm font-semibold text-gray-700 border rounded-lg focus:outline-none"
+                    className="flex justify-center items-center px-[25px] py-[17px] text-sm font-semibold text-gray-700 border rounded-lg focus:outline-none"
                   >
                     <Image
                       src={payme}
@@ -238,7 +250,7 @@ const ProductCard = () => {
                 </div>
                 <button
                   type="submit"
-                  className=" w-full px-[40px] py-[20px] mt-[50px] text-white bg-yellow-500 rounded-lg font-semibold"
+                  className="w-full px-[40px] py-[20px] mt-[50px] text-white bg-yellow-500 rounded-lg font-semibold"
                 >
                   Купить
                 </button>
