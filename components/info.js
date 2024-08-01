@@ -103,7 +103,7 @@ const Index = () => {
   return (
     <div className="container">
       <div className="">
-        <div className="grid  grid-cols-1  lg:grid-cols-2 gap-[40px]">
+        <div className="grid justify-items-center grid-cols-1  lg:grid-cols-2 gap-[40px]">
           {list}
         </div>
       </div>

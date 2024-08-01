@@ -34,7 +34,7 @@ const Carousel = () => {
   return (
     <div className="pb-10">
       <div className="container mx-auto">
-        <div className="relative w-full h-[488px] max-w-[900px] rounded-2xl mx-auto overflow-hidden flex items-center justify-center">
+        <div className="relative w-full h-[488px] max-w-[1240px] rounded-2xl mx-auto overflow-hidden flex items-center justify-center">
           <div
             className="flex transition-transform ease-out duration-500"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -49,7 +49,7 @@ const Carousel = () => {
                 <Image
                   src={src}
                   alt={`Image ${index + 1}`}
-                  width={900}
+                  width={1240}
                   height={488}
                   objectFit="cover"
                   className="border-4 border-gray-300"

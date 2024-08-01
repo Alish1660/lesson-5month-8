@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,8 +11,26 @@ import avatar from "@/public/images/avatar.png";
 import cart from "@/public/images/cart.png";
 import sliders from "@/public/images/sliders.png";
 import share from "@/public/images/share.png";
+import { useParams } from "next/navigation";
+import http from "@/api/interseptors";
 
-const Index = () => {
+const SingleProductPage = () => {
+  const [product, setProduct] = useState();
+
+  const { id } = useParams();
+  console.log(id);
+  const getData = async () => {
+    try {
+      const data = await http.get(`/product/${id}`);
+      setProduct(data.dat);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, [id]);
+  console.log(product);
   const imgList = [productImage, productImage, productImage, productImage];
 
   return (
@@ -183,4 +201,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SingleProductPage;

@@ -1,4 +1,6 @@
-import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
+
 import React from "react";
 import Image from "next/image";
 import Img1 from "@/public/images/img1.png";
@@ -56,7 +58,7 @@ const Index = () => {
                     className="w-full"
                   />
                   <button className="absolute top-2 right-2 bg-white p-1 rounded-full shadow-md transition-colors hover:bg-gray-200">
-                    <FaHeart className="text-red-500" />
+                    <FiHeart className="" />
                   </button>
                 </div>
                 <div className="p-4">

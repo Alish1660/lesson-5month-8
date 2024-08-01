@@ -1,11 +1,5 @@
-import React from "react";
+import Wishlist from "@/views/wishlist/index";
 
-const Index = () => {
-  return (
-    <div>
-      <h1>Wishlist</h1>
-    </div>
-  );
-};
-
-export default Index;
+export default function () {
+  return <Wishlist />;
+}

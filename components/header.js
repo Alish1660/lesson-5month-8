@@ -1,3 +1,4 @@
+// pages/index.js
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -10,8 +11,9 @@ import Search from "@/public/images/search.png";
 import User from "@/public/images/user.png";
 import Sign from "@/public/images/sign.png";
 import Cart from "@/public/images/cart.png";
-import Modal from "@/app/sign-in/page";
+import Modal from "@/views/sign-in/index";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +23,7 @@ const Index = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <>
+    <PageTransition>
       <Modal
         open={open}
         handleClose={handleClose}
@@ -195,7 +197,7 @@ const Index = () => {
           </nav>
         </div>
       </header>
-    </>
+    </PageTransition>
   );
 };
 
